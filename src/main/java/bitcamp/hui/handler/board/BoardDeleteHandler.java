@@ -1,25 +1,26 @@
 package bitcamp.hui.handler.board;
 
 import bitcamp.hui.vo.Board;
+import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
 import bitcamp.util.AnsiEscape;
-import bitcamp.util.ObjectRepository;
+//import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-public class BoardDeleteHandler implements MenuHandler {
+import java.util.ArrayList;
 
-    ObjectRepository<Board> objectRepository;
-    Prompt prompt;
+public class BoardDeleteHandler extends AbstractMenuHandler {
 
-    public BoardDeleteHandler(ObjectRepository<Board> objectRepository, Prompt prompt) {
+    private ArrayList<Board> objectRepository;
+
+    public BoardDeleteHandler(ArrayList<Board> objectRepository, Prompt prompt) {
+        super(prompt);
         this.objectRepository=objectRepository;
-        this.prompt=prompt;
     }
 
     @Override
-    public void action(Menu menu) {
-        System.out.printf(AnsiEscape.ANSI_BOLD +"[%s]\n"+AnsiEscape.ANSI_CLEAR, menu.getTitle());
+    public void action() {
 
         int index = prompt.inputInt("번호? ");
         if (objectRepository.remove(index) == null) {

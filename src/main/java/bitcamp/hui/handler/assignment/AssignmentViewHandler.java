@@ -1,27 +1,27 @@
 package bitcamp.hui.handler.assignment;
 
 import bitcamp.hui.vo.Assignment;
+import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
 import bitcamp.util.AnsiEscape;
-import bitcamp.util.ObjectRepository;
+//import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-public class AssignmentViewHandler implements MenuHandler {
+import java.util.ArrayList;
 
-    Prompt prompt;
-    ObjectRepository<Assignment> objectRepository;
+public class AssignmentViewHandler extends AbstractMenuHandler {
 
-    public AssignmentViewHandler(ObjectRepository<Assignment> objectRepository, Prompt prompt){
+    private ArrayList<Assignment> objectRepository;
+
+    public AssignmentViewHandler(ArrayList<Assignment> objectRepository, Prompt prompt){
+        super(prompt);
         this.objectRepository = objectRepository;
-        this.prompt = prompt;
     }
 
 
     @Override
-    public void action(Menu menu) {
-        System.out.printf(AnsiEscape.ANSI_BOLD + "[%s]\n" +AnsiEscape.ANSI_CLEAR, menu.getTitle());
-
+    public void action() {
         int index = prompt.inputInt("번호? ");
         Assignment assignment = objectRepository.get(index);
         if (assignment ==null) {
@@ -29,8 +29,8 @@ public class AssignmentViewHandler implements MenuHandler {
             return;
         }
 
-        System.out.printf("과제명: %s\n", assignment.title);
-        System.out.printf("내용: %s\n", assignment.content);
-        System.out.printf("제출 마감일: %s\n", assignment.deadline);
+        System.out.printf("과제명: %s\n", assignment.getTitle());
+        System.out.printf("내용: %s\n", assignment.getContent());
+        System.out.printf("제출 마감일: %s\n", assignment.getDeadline());
     }
 }

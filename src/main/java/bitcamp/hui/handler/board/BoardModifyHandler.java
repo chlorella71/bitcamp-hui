@@ -1,26 +1,27 @@
 package bitcamp.hui.handler.board;
 
 import bitcamp.hui.vo.Board;
+import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
 import bitcamp.util.AnsiEscape;
-import bitcamp.util.ObjectRepository;
+//import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-public class BoardModifyHandler implements MenuHandler {
+import java.util.ArrayList;
 
-    Prompt prompt;
-    ObjectRepository<Board> objectRepository;
+public class BoardModifyHandler extends AbstractMenuHandler {
 
-    public BoardModifyHandler(ObjectRepository<Board> objectRepository, Prompt prompt) {
-        this.prompt=prompt;
+    private ArrayList<Board> objectRepository;
+
+    public BoardModifyHandler(ArrayList<Board> objectRepository, Prompt prompt) {
+        super(prompt);
         this.objectRepository =objectRepository;
     }
 
 
     @Override
-    public void action(Menu menu) {
-        System.out.printf(AnsiEscape.ANSI_BOLD+"[%s]\n"+AnsiEscape.ANSI_CLEAR, menu.getTitle());
+    public void action() {
 
         int index = prompt.inputInt("번호? ");
         Board oldBoard = objectRepository.get(index);
@@ -30,10 +31,10 @@ public class BoardModifyHandler implements MenuHandler {
         }
 
         Board board = new Board();
-        board.title=prompt.input("제목(%s)? ", oldBoard.title);
-        board.content=prompt.input("내용(%s)? ", oldBoard.content);
-        board.writer=prompt.input("작성자(%s)? ", oldBoard.writer);
-        board.createdDate=prompt.input("작성일(%s)? ", oldBoard.createdDate);
+        board.setTitle(prompt.input("제목(%s)? ", oldBoard.getTitle()));
+        board.setContent(prompt.input("내용(%s)? ", oldBoard.getTitle()));
+        board.setWriter(prompt.input("작성자(%s)? ", oldBoard.getWriter()));
+        board.setCreatedDate(prompt.input("작성일(%s)? ", oldBoard.getCreatedDate()));
 
         objectRepository.set(index, board);
     }

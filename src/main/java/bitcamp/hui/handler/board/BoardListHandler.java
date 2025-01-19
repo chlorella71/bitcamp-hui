@@ -1,29 +1,33 @@
 package bitcamp.hui.handler.board;
 
 import bitcamp.hui.vo.Board;
+import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
 import bitcamp.util.AnsiEscape;
-import bitcamp.util.ObjectRepository;
+import bitcamp.util.Prompt;
 
-public class BoardListHandler implements MenuHandler {
+import java.util.ArrayList;
+//import bitcamp.util.ObjectRepository;
 
-    ObjectRepository<Board> objectRepository;
+public class BoardListHandler extends AbstractMenuHandler {
 
-    public BoardListHandler(ObjectRepository<Board> objectRepository) {
+    private ArrayList<Board> objectRepository;
+
+    public BoardListHandler(ArrayList<Board> objectRepository, Prompt prompt) {
+        super(prompt);
         this.objectRepository=objectRepository;
     }
 
     @Override
-    public void action(Menu menu) {
-        System.out.printf(AnsiEscape.ANSI_BOLD+"[%s]\n"+AnsiEscape.ANSI_CLEAR, menu.getTitle());
+    public void action() {
 
         System.out.printf("%-20s\t%10s\t%s\n", "Title", "Writer", "Date");
 
         Board[] boards = objectRepository.toArray(new Board[0]);
 
         for (Board board : boards) {
-            System.out.printf("%-20s\t%10s\t%s\n", board.title, board.writer, board.createdDate );
+            System.out.printf("%-20s\t%10s\t%s\n", board.getTitle(), board.getWriter(), board.getCreatedDate() );
         }
     }
 }

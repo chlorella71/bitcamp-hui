@@ -1,29 +1,33 @@
 package bitcamp.hui.handler.member;
 
 import bitcamp.hui.vo.Member;
+import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.menu.Menu;
 import bitcamp.menu.MenuHandler;
 import bitcamp.util.AnsiEscape;
-import bitcamp.util.ObjectRepository;
+import bitcamp.util.Prompt;
 
-public class MemberListHandler implements MenuHandler {
+import java.util.ArrayList;
+//import bitcamp.util.ObjectRepository;
 
-    ObjectRepository<Member> objectRepository;
+public class MemberListHandler extends AbstractMenuHandler {
 
-    public MemberListHandler(ObjectRepository<Member> objectRepository) {
+    private ArrayList<Member> objectRepository;
+
+    public MemberListHandler(ArrayList<Member> objectRepository, Prompt prompt) {
+        super(prompt);
         this.objectRepository = objectRepository;
     }
 
     @Override
-    public void action(Menu menu) {
-        System.out.printf(AnsiEscape.ANSI_BOLD +"[%s]\n"+AnsiEscape.ANSI_CLEAR, menu.getTitle());
+    public void action() {
 
         System.out.printf("%-10s\t%30s\t%s\n", "이름", "이메일", "가입일");
 
         Member[] members = objectRepository.toArray(new Member[0]);
 
         for (Member member: members) {
-            System.out.printf("%-10s\t%30s\t%s\n", member.name, member.email, member.createdDate);
+            System.out.printf("%-10s\t%30s\t%s\n", member.getName(), member.getEmail(), member.getCreatedDate());
         }
     }
 }
