@@ -1,20 +1,18 @@
-package bitcamp.hui.handler.member;
+package bitcamp.hui.myapp.handler.member;
 
-import bitcamp.hui.vo.Member;
+import bitcamp.hui.myapp.vo.Member;
 import bitcamp.menu.AbstractMenuHandler;
-import bitcamp.menu.Menu;
-import bitcamp.menu.MenuHandler;
-import bitcamp.util.AnsiEscape;
 import bitcamp.util.Prompt;
 
 import java.util.ArrayList;
+import java.util.List;
 //import bitcamp.util.ObjectRepository;
 
 public class MemberListHandler extends AbstractMenuHandler {
 
-    private ArrayList<Member> objectRepository;
+    private List<Member> objectRepository;
 
-    public MemberListHandler(ArrayList<Member> objectRepository, Prompt prompt) {
+    public MemberListHandler(List<Member> objectRepository, Prompt prompt) {
         super(prompt);
         this.objectRepository = objectRepository;
     }

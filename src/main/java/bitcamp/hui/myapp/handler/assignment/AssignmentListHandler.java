@@ -1,20 +1,18 @@
-package bitcamp.hui.handler.assignment;
+package bitcamp.hui.myapp.handler.assignment;
 
-import bitcamp.hui.vo.Assignment;
+import bitcamp.hui.myapp.vo.Assignment;
 import bitcamp.menu.AbstractMenuHandler;
-import bitcamp.menu.Menu;
-import bitcamp.menu.MenuHandler;
-import bitcamp.util.AnsiEscape;
 import bitcamp.util.Prompt;
 
 import java.util.ArrayList;
+import java.util.List;
 //import bitcamp.util.ObjectRepository;
 
 public class AssignmentListHandler extends AbstractMenuHandler {
 
-    private ArrayList<Assignment> objectRepository;
+    private List<Assignment> objectRepository;
 
-    public AssignmentListHandler(ArrayList<Assignment> objectRepository, Prompt prompt) {
+    public AssignmentListHandler(List<Assignment> objectRepository, Prompt prompt) {
         super(prompt);
         this.objectRepository= objectRepository;
     }

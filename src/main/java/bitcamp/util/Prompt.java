@@ -1,6 +1,7 @@
 package bitcamp.util;
 
 import java.io.InputStream;
+import java.sql.Date;
 import java.util.Scanner;
 
 public class Prompt {
@@ -27,6 +28,11 @@ public class Prompt {
     public boolean inputBoolean(String title, Object... args) {
         String str = this.input(title, args);
         return Boolean.parseBoolean(str);
+    }
+
+    public Date inputDate(String title, Object... args) {
+        String str = this.input(title, args);
+        return Date.valueOf(str);
     }
 
     public void close() {this.in.close();}

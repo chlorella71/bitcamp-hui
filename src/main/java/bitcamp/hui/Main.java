@@ -1,18 +1,20 @@
 package bitcamp.hui;
 
-import bitcamp.hui.handler.HelpHandler;
-import bitcamp.hui.handler.assignment.*;
-import bitcamp.hui.handler.board.*;
-import bitcamp.hui.handler.member.*;
-import bitcamp.hui.vo.Assignment;
-import bitcamp.hui.vo.Board;
-import bitcamp.hui.vo.Member;
+import bitcamp.hui.myapp.handler.HelpHandler;
+import bitcamp.hui.myapp.handler.assignment.*;
+import bitcamp.hui.myapp.handler.board.*;
+import bitcamp.hui.myapp.handler.member.*;
+import bitcamp.hui.myapp.vo.Assignment;
+import bitcamp.hui.myapp.vo.Board;
+import bitcamp.hui.myapp.vo.Member;
 import bitcamp.menu.MenuGroup;
 import bitcamp.menu.MenuItem;
 //import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -20,10 +22,10 @@ public class Main {
     public static void main(String[] args) {
         Prompt prompt = new Prompt(System.in);
 
-        ArrayList<Assignment> assignmentRepository = new ArrayList<>();
-        ArrayList<Board> boardRepository = new ArrayList<>();
-        ArrayList<Member> memberRepository = new ArrayList<>();
-        ArrayList<Board> greetingReposiory = new ArrayList<>();
+        List<Assignment> assignmentRepository = new LinkedList<>();
+        List<Board> boardRepository = new LinkedList<>();
+        List<Member> memberRepository = new LinkedList<>();
+        List<Board> greetingReposiory = new LinkedList<>();
 
         MenuGroup mainMenu = new MenuGroup("메인");
 
@@ -59,10 +61,17 @@ public class Main {
         greetingMenu.add(new MenuItem("목록", new BoardListHandler(greetingReposiory, prompt)));
         mainMenu.add(greetingMenu);
 
-        MenuItem helpMenu = new MenuItem("도움말", new HelpHandler());
+        MenuItem helpMenu = new MenuItem("도움말", new HelpHandler(prompt));
         mainMenu.add(helpMenu);
 
-        mainMenu.execute(prompt);
-        prompt.close();
+        while(true) {
+            try {
+                mainMenu.execute(prompt);
+                prompt.close();
+                break;
+            } catch (Exception e) {
+                System.out.println("예외 발생!");
+            }
+        }
     }
 }

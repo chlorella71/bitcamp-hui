@@ -1,10 +1,12 @@
-package bitcamp.hui.vo;
+package bitcamp.hui.myapp.vo;
+
+import java.sql.Date;
 
 public class Board {
     private String title;
     private String content;
     private String writer;
-    private String createdDate;
+    private Date createdDate;
 
     public String getTitle() {
         return title;
@@ -30,11 +32,11 @@ public class Board {
         this.writer = writer;
     }
 
-    public String getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(String createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 }

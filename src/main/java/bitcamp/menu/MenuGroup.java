@@ -2,14 +2,15 @@ package bitcamp.menu;
 
 import bitcamp.util.Prompt;
 
-public class MenuGroup implements Menu{
+import java.util.LinkedList;
+import java.util.List;
 
-    private String title;
-    private Menu[] menus = new Menu[10];
-    private int menuSize;
+public class MenuGroup extends AbstractMenu{
+
+    private List<Menu> menus = new LinkedList<>();
 
     public MenuGroup(String title) {
-        this.title = title;
+        super(title);
     }
 
     @Override
@@ -17,7 +18,7 @@ public class MenuGroup implements Menu{
         printMenu();
 
         while (true) {
-            String input = prompt.input("%s> ", title);
+            String input = prompt.input("%s> ", this.getTitle());
 
             if (input.equals("menu")) {
                 printMenu();
@@ -27,62 +28,29 @@ public class MenuGroup implements Menu{
             }
 
             int menuNo = Integer.parseInt(input);
-            if (menuNo < 1 || menuNo > this.menuSize) {
+            if (menuNo < 1 || menuNo > this.menus.size()) {
                 System.out.println("메뉴 번호가 옳지 않습니다.");
                 continue;
             }
-            menus[menuNo -1].execute(prompt);
+            menus.get(menuNo -1).execute(prompt);
         }
     }
 
     private void printMenu() {
-        System.out.printf("[%s]\n", title);
+        System.out.printf("[%s]\n", this.getTitle());
 
-        for (int i = 0; i< menuSize; i++) {
-            System.out.printf("%d. %s\n", (i+1), menus[i].getTitle());
+        for (int i = 0; i< menus.size(); i++) {
+            System.out.printf("%d. %s\n", (i+1), menus.get(i).getTitle());
         }
 
         System.out.printf("0. %s\n", "이전");
     }
 
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
     public void add(Menu menu) {
-        if (menuSize == menus.length) {
-            int oldSize = menus.length;
-            int newSize = oldSize + (oldSize >> 1);
-
-            Menu[] arr = new Menu[newSize];
-            for (int i= 0; i < oldSize; i++) {
-                arr[i] = menus[i];
-            }
-
-            menus = arr;
-        }
-        menus[menuSize++]=menu;
+        menus.add(menu);
     }
 
     public void remove(Menu menu) {
-        int index = indexOf(menu);
-        if (index == -1) {
-            return;
-        }
-
-        for (int i = index; i< (menuSize-1); i++) {
-            menus[i] = menus[i+1];
-        }
-        menus[--menuSize] = null;
-    }
-
-    int indexOf(Menu menu) {
-        for (int i = 0; i< menuSize; i++) {
-            if (menu == menus[i]) {
-                return i;
-            }
-        }
-        return -1;
+        menus.remove(menu);
     }
 }
