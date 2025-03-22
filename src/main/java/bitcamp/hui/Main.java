@@ -12,9 +12,9 @@ import bitcamp.menu.MenuItem;
 //import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import bitcamp.util.ArrayList;
+import bitcamp.util.LinkedList;
+import bitcamp.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -24,8 +24,8 @@ public class Main {
 
         List<Assignment> assignmentRepository = new LinkedList<>();
         List<Board> boardRepository = new LinkedList<>();
-        List<Member> memberRepository = new LinkedList<>();
-        List<Board> greetingReposiory = new LinkedList<>();
+        List<Member> memberRepository = new ArrayList<>();
+        List<Board> greetingReposiory = new ArrayList<>();
 
         MenuGroup mainMenu = new MenuGroup("메인");
 

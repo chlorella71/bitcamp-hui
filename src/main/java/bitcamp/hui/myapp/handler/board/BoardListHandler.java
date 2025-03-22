@@ -4,8 +4,8 @@ import bitcamp.hui.myapp.vo.Board;
 import bitcamp.menu.AbstractMenuHandler;
 import bitcamp.util.Prompt;
 
-import java.util.ArrayList;
-import java.util.List;
+import bitcamp.util.ArrayList;
+import bitcamp.util.List;
 //import bitcamp.util.ObjectRepository;
 
 public class BoardListHandler extends AbstractMenuHandler {

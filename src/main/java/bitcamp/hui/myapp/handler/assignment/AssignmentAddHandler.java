@@ -5,8 +5,8 @@ import bitcamp.hui.myapp.vo.Assignment;
 //import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-import java.util.ArrayList;
-import java.util.List;
+import bitcamp.util.ArrayList;
+import bitcamp.util.List;
 
 public class AssignmentAddHandler extends AbstractMenuHandler {
 

@@ -2,8 +2,8 @@ package bitcamp.menu;
 
 import bitcamp.util.Prompt;
 
-import java.util.LinkedList;
-import java.util.List;
+import bitcamp.util.LinkedList;
+import bitcamp.util.List;
 
 public class MenuGroup extends AbstractMenu{
 

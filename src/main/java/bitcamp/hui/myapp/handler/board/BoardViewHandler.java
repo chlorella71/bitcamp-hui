@@ -5,8 +5,8 @@ import bitcamp.menu.AbstractMenuHandler;
 //import bitcamp.util.ObjectRepository;
 import bitcamp.util.Prompt;
 
-import java.util.ArrayList;
-import java.util.List;
+import bitcamp.util.ArrayList;
+import bitcamp.util.List;
 
 public class BoardViewHandler extends AbstractMenuHandler {
 
