@@ -5,6 +5,8 @@ import bitcamp.util.Prompt;
 import bitcamp.util.LinkedList;
 import bitcamp.util.List;
 
+// Composite 패턴에서 '복합 객체(composite object)' 역할을 하는 클래스
+// - 다른 Menu 객체를 포함
 public class MenuGroup extends AbstractMenu{
 
     private List<Menu> menus = new LinkedList<>();
@@ -13,7 +15,7 @@ public class MenuGroup extends AbstractMenu{
         super(title);
     }
 
-    @Override
+    @Override   // 인터페이스나 수퍼클래스의 메서드를 정의하겠다고 컴파일러에게 알림
     public void execute(Prompt prompt) {
         printMenu();
 

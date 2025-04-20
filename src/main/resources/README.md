@@ -38,3 +38,7 @@ LinkedList 자료구조 구현
   - ArrayList, LinkedList에 AbstractList 추상 클래스 적용
 - MenuGroup에 적용
 - Handler에 적용
+
+2025-4-3\
+app-27 LinkedListTest 구현중
+list.remove(2)가 오류 없이 실행되도록 해보기

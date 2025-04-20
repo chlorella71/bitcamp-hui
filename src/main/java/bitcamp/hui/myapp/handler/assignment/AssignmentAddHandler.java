@@ -23,7 +23,7 @@ public class AssignmentAddHandler extends AbstractMenuHandler {
             Assignment assignment = new Assignment();
             assignment.setTitle(prompt.input("과제명? "));
             assignment.setContent(prompt.input("내용? "));
-            assignment.setDeadline(prompt.inputDate("제출 마감일? (예: 2025-03-17 "));
+            assignment.setDeadline(prompt.inputDate("제출 마감일? (예: 2025-03-17) "));
 
             objectRepository.add(assignment);
         } catch (Exception e) {
