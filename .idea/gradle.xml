@@ -9,6 +9,19 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app-1" />
+            <option value="$PROJECT_DIR$/app-10" />
+            <option value="$PROJECT_DIR$/app-11" />
+            <option value="$PROJECT_DIR$/app-12" />
+            <option value="$PROJECT_DIR$/app-13" />
+            <option value="$PROJECT_DIR$/app-2" />
+            <option value="$PROJECT_DIR$/app-3" />
+            <option value="$PROJECT_DIR$/app-4" />
+            <option value="$PROJECT_DIR$/app-5" />
+            <option value="$PROJECT_DIR$/app-6" />
+            <option value="$PROJECT_DIR$/app-7" />
+            <option value="$PROJECT_DIR$/app-8" />
+            <option value="$PROJECT_DIR$/app-9" />
           </set>
         </option>
       </GradleProjectSettings>

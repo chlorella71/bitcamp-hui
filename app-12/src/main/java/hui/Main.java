@@ -1,0 +1,10 @@
+package hui;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        MainMenu.execute();
+        Prompt.close();
+    }
+}
