@@ -3,7 +3,7 @@ package hui.myapp.handler;
 import hui.myapp.vo.Board;
 import hui.util.Prompt;
 
-public class BoardMenu {
+public class BoardMenu implements Menu{
 
     /*
     의존 객체(Dependency Object ==> dependency);
@@ -25,7 +25,7 @@ public class BoardMenu {
         this.prompt = prompt;
     }
 
-    void execute() {
+    public void execute() {
         printMenu();
         while (true) {
             String input = prompt.input("메인/%s> ", title);

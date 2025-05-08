@@ -3,7 +3,7 @@ package hui.myapp.handler;
 import hui.myapp.vo.Member;
 import hui.util.Prompt;
 
-public class MemberMenu {
+public class MemberMenu implements Menu{
 
     /*
     의존 객체(Dependency Object ==> dependency);
@@ -31,7 +31,7 @@ public class MemberMenu {
         System.out.println("0. 이전");
     }
 
-    void execute() {
+    public void execute() {
         printMenu();
         while (true) {
             String input = prompt.input("메인/%s> ", title);

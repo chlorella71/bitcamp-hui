@@ -3,7 +3,7 @@ package hui.myapp.handler;
 import hui.myapp.vo.Assignment;
 import hui.util.Prompt;
 
-public class AssignmentMenu {
+public class AssignmentMenu implements Menu{
 
     /*
     의존 객체(Dependency Object ==> dependency);
@@ -31,7 +31,7 @@ public class AssignmentMenu {
         System.out.println("0. 이전");
     }
 
-    void execute() {
+    public void execute() {
         printMenu();
 
         while (true) {
