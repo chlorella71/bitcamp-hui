@@ -170,3 +170,22 @@
   - 객체지향 설계 원칙 및 OOP rosua:
     - SOLID의 'OCP(Open/Closed Principle)' 준수
     - GRASP의 'Low Coupling' 책임 할당 원칙 준수
+
+## 18. 인스턴스 목록 제어 기능을 별도의 클래스로 캡슐화: 재사용성 높임
+- 핸들러 객체에서 수행하는 배열 다루는 일을 실제 배열을 가지고 있는 Repository객체로 이관하기
+  - 현황:
+    - Repository클래스의 배열 레퍼런스를 Handler에서 다루고 있음.
+  - 목표:
+    - 인스턴스를 다루는 기능을 다른 프로젝트에서도 재사용할 수 있게 만들고 싶음.
+  - 객체지향 설계 원칙 및 OOP개념:
+    - GRASP의 Information Expert 책임 할당 원칙 준수
+    - GRASP의 High Cohesion책임 할당 원칙 준수
+    - OOP의 Encapsulation(캡슐화)
+  - 효과:
+    - 배열을 다루는 코드를 별도의 객체로 분리하면 코드 재사용이 쉬워짐.
+    - 객체의 역할을 전문화함으로써 코드를 관리하기가 쉬워짐.
+    - 목록을 다루는 방식을 감추고 대신 외부에 공개된 도구(메서드)를 통해 목록을 사용하도록 유도하면, 목록을 다루는 방식을 변경하더라도 외부에 영향을 주지않음. 즉 기능을 변경하더라도 다른 클래스에 미치는 영향을 최소화시킬 수 있음.
+## 19. 다형성을 이용하여 범용으로 사용할 수 있는 Repository클래스 만들기
+- 목록 관리 범용 클래스 ObjectRepository정의
+  - 다형성의 polymorphic variable 문법 활용
+- 기존의 Repository클래스를 ObjectRepository로 대체
