@@ -189,3 +189,26 @@
 - 목록 관리 범용 클래스 ObjectRepository정의
   - 다형성의 polymorphic variable 문법 활용
 - 기존의 Repository클래스를 ObjectRepository로 대체
+
+## 20. 제네릭을 사용하여 타입을 파라미터로 다루기
+- ObjectRepository에 제네릭 적용하기
+  - 범용 클래스를 특정 타입을 다루는 클래스로 제한할 수 있음.
+  - 파라미터 값에 대해 특정 타입으로 한정할 수 있음.
+  - 반환값의 타입을 형변환할 필요가 없음.
+- T[] toArray(T[])메서드 추가하기
+  - System.arraycopy() 메서드 사용하기
+  - Arrays.copyOf() 메서드 사용하기
+
+## 21. 자바 Collection API 사용하기 - ArrayList 적용
+- 목록을 다루는 기존 Repository클래스를 자바 컬렉션 API로 교체
+
+## 22. 접근 제어 modifier 및 setter, getter 도입하기
+- 인스턴스 필드에 직접 접근하는 것을 막는 방법: private
+- 인스턴스 필드에 값을 저장하고 꺼내는 방법: setter/getter
+
+## 23. 상속(generalization)과 추상 클래스/추상 메서드, 접근 제어 활용하기
+- MenuItem과 MenuGroup의 공통 코드를 추출하여 수퍼 클래스를 정의하기
+- MenuHandler구현체의 공통 분모를 추출하여 수퍼 클래스 정의하기
+- 수퍼 클래스를 추상 클래스로 정의하여 직접 사용을 막기
+- 추상 메서드를 선언하여 서브 클래스에게 구현을 강요하기
+- 서브 클래스가 의존 객체를 사용할 수 있도록 접근 범위를 protected로 설정하기
