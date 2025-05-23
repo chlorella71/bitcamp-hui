@@ -219,3 +219,23 @@
 ## 25. 예외 처리하기
 - 예외가 발생했을 때 시스템을 멈추지 않게 하는 방법
 - try ~catch ~finally 사용법
+
+## 26. LinkedList 자료구조 구현하기
+- 목록관리 범용클래스 LinkedList Wjddml
+  - LinkedList 구동원리 이해 및 구현
+  - 중첩클래스 활용: static 중첩 클래스 Node 정의
+  - 제네릭 적용
+  - List 구현체를 생성자를 통해 주입: DI(Dependency Injection) 적용
+- List 객체 사용 규칙 정의
+  - ArrayList, LinkedList에 List인터페이스 적용
+- AbstractList 추상 클래스 적용
+  - ArrayList, LinkedList에 AbstractList 추상클래스 적용
+- MenuGroup에 적용
+- Handler에 적용
+
+## 27. Stack, Queue 자료구조 표현하기
+- Stack과 Queue의 구동원리 이해 및 구현
+- Stack 적용
+  - MenuGroup에 Stack을 이용하여 Breadcrumb 구현
+- GoF의 "Factory Method" 디자인패턴 적용
+  - MenuGroup에 적용
