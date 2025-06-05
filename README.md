@@ -239,3 +239,10 @@
   - MenuGroup에 Stack을 이용하여 Breadcrumb 구현
 - GoF의 "Factory Method" 디자인패턴 적용
   - MenuGroup에 적용
+
+## 28. Iterator 디자인 패턴을 활용하여 목록 조회 기능을 캡슐화하기
+- GoF의 디자인 패턴 중 Iterator 패턴의 동작원리 이해 및 구현
+- ArrayList, LinkedList, Stack, Queue에 적용
+- 중첩 클래스 문법을 이용하여 Iterator 구현하기
+  - static/non-static nested 클래스 문법을 호라용하는 방법
+  - local/anonymous 클래스 문법을 활용하는 방법
