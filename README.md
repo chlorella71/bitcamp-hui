@@ -262,3 +262,24 @@
 - 상속을 이용하여 바이트 입출력 기능을 확장하기
   - DataInputStream = FileInputStream 클래스 + primitive type/String 값 읽기
   - DataOutputStream = FileOutputStream 클래스 + Primitive type/String 값 쓰기
+
+## 33. 입출력 성능을 높이기 위해 버퍼 기능 추가하기
+- 기존의 클래스에 버퍼 기능을 추가함.
+  - BufferedDatainputStream = DataInputStream + 버퍼 기능
+  - BufferedDataOutputStream = DataOutputStream + 버퍼 기능
+
+## 34. 입출력 기능 확장에 상속 대신 Decorator 패턴을 적용하기
+- 상속 vs Decorator 패턴(GoF)
+  - 기존 코드를 손대지 않고 기능 확장하는 방법
+  - 상속: 기능 확장 용이
+  - Decorator: 기능 확장 및 기능 제거 용이
+- BufferedDataInputStream 분해
+  - BufferedInputStream, DataInputStream, FileInputStream, FileInputStream
+- BufferedDataOutputStream 분해
+  - BufferedOutputStream, DataOutputStream, FileOutputStream
+- Java I/O Stream API로 대체하기
+
+## 35. 인스턴스를 통째로 입출력하기(객체 직렬화)
+- ObjectInputStream/ObjectOutputStrem 사용법
+  - java.io.Serializable 인터페이스 사용법
+  - transient modifier 사용법
