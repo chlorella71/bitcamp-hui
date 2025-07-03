@@ -10,7 +10,7 @@ public class MenuItem extends AbstractMenu{
 
     private MenuHandler menuHandler;
 
-    public MenuItem(String title) {
+    public MenuItem(String title, Stack<String>) {
         super(title);
     }
 

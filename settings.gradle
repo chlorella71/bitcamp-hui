@@ -1,2 +1,3 @@
 rootProject.name = 'bitcamp-hui'
-include 'app-39'
+include 'app-40-server'
+include 'app-40-client'

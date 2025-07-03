@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'hui'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // GSON 라이브러리
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.13.1")
+}
+
+application {
+    mainClass = 'hui.ClientApp'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// 자바 소스를 컴파일 할 때 적용할 옵션(Gradlce로 컴파일 할 때)
+tasks.withType(JavaCompile).configureEach {
+    // 프로젝트의 소스 파일 인코딩을 gradle에게 알려줌
+    // $javac -encoding UTF-8 ..
+    options.encoding = 'UTF-8'
+}
+
+run {
+    standardInput = System.in
+}
